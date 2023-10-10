@@ -2,64 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Infographic Visualization</title>
-    
-    <!-- Include Vega-Lite and Vega-Embed libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    
-    <!-- Add your CSS styling here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.6/pure-min.css">
     <style>
-        /* Add your CSS styling for the page here */
+        /* Add your CSS styling here */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
         }
 
-        .container {
+        /* Customize the styles for your visualization containers */
+        .visualization-container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top: 20px;
         }
 
-        h1 {
-            font-size: 24px;
-            text-align: center;
-        }
-
-        /* Add additional CSS styles as needed for your infographic */
+        /* Customize other styles as needed */
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Weather Infographic Visualization</h1>
-        <div id="densityPlot"></div>
-        <div id="scatterPlot"></div>
+    <div class="visualization-container">
+        <!-- Add your first data visualization here -->
+        <h2>World Density Plot - Temperature and Humidity</h2>
+        <div id="temperature-humidity-plot"></div>
     </div>
 
-    <!-- Include your JSON files for Vega-Lite visualizations -->
+    <div class="visualization-container">
+        <!-- Add your second data visualization here -->
+        <h2>Scatter Plot - Air Quality, Weather Conditions, and Humidity</h2>
+        <div id="scatter-plot"></div>
+    </div>
+
+    <!-- Include Vega-Lite scripts for data visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Include your JSON data files hosted on GitHub -->
     <script>
-        // Load the Vega-Lite visualizations from JSON files
-        const densityPlotSpec = {
-            $schema: 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/mapvisualization.vl.json',
-            // Include your Vega-Lite specification for the density plot here
-        };
+        // GitHub raw file URLs for your JSON files
+        const temperatureHumidityJSON = 'https://raw.githubusercontent.com/irhen-chan/homework10/main/mapvisualization.vl.json';
+        const scatterPlotJSON = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/scatterplotvisualization.vl.json';
 
-        const scatterPlotSpec = {
-            $schema: 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/scatterplotvisualization.vl.json',
-            // Include your Vega-Lite specification for the scatter plot here
-        };
+        // Embed the first visualization from your first JSON file
+        vegaEmbed('#temperature-humidity-plot', temperatureHumidityJSON)
+            .then(result => console.log(result))
+            .catch(error => console.error('Error loading temperature-humidity plot:', error));
 
-        // Embed the visualizations into the HTML page
-        vegaEmbed('#densityPlot', densityPlotSpec).catch(console.error);
-        vegaEmbed('#scatterPlot', scatterPlotSpec).catch(console.error);
+        // Embed the second visualization from your second JSON file
+        vegaEmbed('#scatter-plot', scatterPlotJSON)
+            .then(result => console.log(result))
+            .catch(error => console.error('Error loading scatter plot:', error));
     </script>
 </body>
 </html>
