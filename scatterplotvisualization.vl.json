@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": {
+    "text": "Best Locations for Sunrise and Sunset",
+    "fontSize": 18,
+    "font": "Helvetica Neue",
+    "fontWeight": "bold",
+    "color": "black"
+  },
+  "background": "#d5d4d46a",
+  "data": {
+    "url": "https://raw.githubusercontent.com/irhen-chan/FIT-3179/main/GlobalWeatherRepository.csv"
+  },
+  "mark": "circle",
+  "selection": {
+    "zoom": {"type": "interval", "encodings": ["x", "y"], "bind": "scales"}
+  },
+  "transform": [{"filter": {"selection": "zoom"}}],
+  "encoding": {
+    "x": {"field": "humidity", "type": "quantitative", "title": "Humidity"},
+    "y": {
+      "field": "air_quality_PM10",
+      "type": "quantitative",
+      "title": "Air Quality (PM10)"
+    },
+    "color": {
+      "field": "condition_text",
+      "type": "ordinal",
+      "title": "Weather type",
+      "scale": {
+        "range": [
+          "#FFFF00",
+          "#FFFA00",
+          "#C6DFFF",
+          "#B9D5FF",
+          "#ACCBFF",
+          "#9FC1FF",
+          "#92B7FF",
+          "#85ADFF",
+          "#78A3FF",
+          "#6B99FF",
+          "#5E8FFF",
+          "#5185FF",
+          "#447BFF",
+          "#3771FF",
+          "#2A67FF",
+          "#1D5DFF",
+          "#1053FF",
+          "#0349FF",
+          "#003EFF",
+          "#0034F5",
+          "#002AEA",
+          "#0020E0",
+          "#0016D5",
+          "#000CCA"
+        ]
+      },
+      "sort": [
+        "Clear",
+        "Sunny",
+        "Partly cloudy",
+        "Patchy light drizzle",
+        "Patchy light rain",
+        "Light drizzle",
+        "Light rain shower",
+        "Patchy light rain with thunder",
+        "Light rain",
+        "Moderate rain at times",
+        "Moderate rain",
+        "Moderate or heavy rain shower",
+        "Heavy rain at times",
+        "Thundery outbreaks possible",
+        "Heavy rain",
+        "Torrential rain shower",
+        "Light sleet",
+        "Moderate or heavy snow with thunder",
+        "Mist",
+        "Fog",
+        "Overcast",
+        "Cloudy",
+        "Light rain",
+        "Patchy rain possible",
+        "Moderate or heavy rain with thunder"
+      ]
+    },
+    "tooltip": [
+      {"field": "location_name", "title": "Location"},
+      {"field": "humidity", "title": "Humidity"},
+      {"field": "air_quality_PM10", "title": "Air Quality (PM10)"},
+      {"field": "condition_text", "title": "Weather"}
+    ]
+  },
+  "config": {}
+}
