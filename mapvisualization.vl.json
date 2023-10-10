@@ -24,11 +24,7 @@
   ],
   "transform": [
     {
-      "filter": {
-        "field": "humidity",
-        "gte": {"param": "Humidity_range[0]"},
-        "lte": {"param": "Humidity_range[1]"}
-      }
+      "filter": "datum.humidity > Humidity_range"
     }
   ],
   "data": {
