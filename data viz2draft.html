@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Infographic Visualization</title>
+    
+    <!-- Include Vega-Lite and Vega-Embed libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <!-- Add your CSS styling here -->
+    <style>
+        /* Add your CSS styling for the page here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* Add additional CSS styles as needed for your infographic */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Infographic Visualization</h1>
+        <div id="densityPlot"></div>
+        <div id="scatterPlot"></div>
+    </div>
+
+    <!-- Include your JSON files for Vega-Lite visualizations -->
+    <script>
+        // Load the Vega-Lite visualizations from JSON files
+        const densityPlotSpec = {
+            $schema: 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/mapvisualization.vl.json',
+            // Include your Vega-Lite specification for the density plot here
+        };
+
+        const scatterPlotSpec = {
+            $schema: 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/scatterplotvisualization.vl.json',
+            // Include your Vega-Lite specification for the scatter plot here
+        };
+
+        // Embed the visualizations into the HTML page
+        vegaEmbed('#densityPlot', densityPlotSpec).catch(console.error);
+        vegaEmbed('#scatterPlot', scatterPlotSpec).catch(console.error);
+    </script>
+</body>
+</html>
