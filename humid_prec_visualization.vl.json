@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": {
+    "text": "Humidity v/s precipitation",
+    "fontSize": 18,
+    "font": "Helvetica Neue",
+    "fontWeight": "bold",
+    "color": "black"
+  },
+  "background": "#4140406a",
+  "data": {
+    "url": "https://raw.githubusercontent.com/irhen-chan/FIT-3179/main/GlobalWeatherRepository.csv"
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "humidity", "title": "Humidity", "type": "quantitative"},
+    "y": {
+      "field": "precip_mm",
+      "title": "precipitation (mm)",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {"field": "country", "title": "Country"},
+      {"field": "location_name", "title": "Location"},
+      {"field": "condition_text", "title": "Weather condition"}
+    ],
+    "color": {
+      "field": "condition_text",
+      "type": "ordinal",
+      "title": "Weather type",
+      "scale": {
+        "range": [
+          "#000CCA",
+          "#0016D5",
+          "#0020E0",
+          "#002AEA",
+          "#0034F5",
+          "#003EFF",
+          "#0349FF",
+          "#1053FF",
+          "#1D5DFF",
+          "#2A67FF",
+          "#3771FF",
+          "#447BFF",
+          "#5185FF",
+          "#5E8FFF",
+          "#6B99FF",
+          "#78A3FF",
+          "#85ADFF",
+          "#92B7FF",
+          "#9FC1FF",
+          "#ACCBFF",
+          "#B9D5FF",
+          "#C6DFFF",
+          "#FFFA00",
+          "#FFFF00"
+        ]
+      },
+      "sort": [
+        "Moderate or heavy rain with thunder",
+        "Patchy rain possible",
+        "Light rain",
+        "Cloudy",
+        "Overcast",
+        "Fog",
+        "Mist",
+        "Moderate or heavy snow with thunder",
+        "Light sleet",
+        "Torrential rain shower",
+        "Heavy rain",
+        "Thundery outbreaks possible",
+        "Heavy rain at times",
+        "Moderate or heavy rain shower",
+        "Moderate rain",
+        "Moderate rain at times",
+        "Light rain",
+        "Patchy light rain with thunder",
+        "Light rain shower",
+        "Light drizzle",
+        "Patchy light rain",
+        "Patchy light drizzle",
+        "Partly cloudy",
+        "Sunny",
+        "Clear"
+      ]
+    }
+  },
+  "config": {}
+}
