@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": {
+    "text": "Locations with the highest pollution",
+    "fontSize": 18,
+    "font": "Helvetica Neue",
+    "fontWeight": "bold",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/irhen-chan/FIT-3179/main/top_10_locations.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "location_name",
+      "type": "nominal",
+      "sort": "-y",
+      "title": "Location"
+    },
+    "y": {
+      "field": "avg_concentration",
+      "type": "quantitative",
+      "title": "Average Pollution levels"
+    },
+    "tooltip": [
+      {"field": "location_name", "title": "Location"},
+      {"field": "avg_concentration", "title": "Average Pollution levels"},
+      {"field": "avg_CO", "title": "Average Carbon Monoxide"},
+      {"field": "avg_SO2", "title": "Average Sulphur Dioxide"},
+      {"field": "avg_NO2", "title": "Average Nitrogen Dioxide"},
+      {"field": "avg_PM10", "title": "Average PM10"}
+    ],
+    "color": {"value": "#8B0000"}
+  },
+  "config": {}
+}
