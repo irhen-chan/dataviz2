@@ -34,6 +34,6 @@
     "color": {"field": "moon_phase", "type": "nominal", "title": "Moon Phase"},
     "order": {"field": "rank"}
   },
-  "layer": [{"mark": {"type": "arc", "tooltip": true, "radius": "200"}}],
+  "layer": [{"mark": {"type": "arc", "tooltip": true, "radius": "50"}}],
   "config": {}
 }
