@@ -4,66 +4,330 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Infographic Visualization</title>
+    <title>Observing the Skies: Weather Edition</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.6/pure-min.css">
     <style>
-        /* Add your CSS styling here */
+        /* Add your CSS styling here */      
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family:"Helvetica", Arial, sans-serif;;
             background-color: #f5f5f5;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/011/134/248/non_2x/seamless-golden-space-pattern-with-stars-and-moon-phases-on-a-black-background-for-tarot-astrology-wallpaper-case-for-phone-magic-cosmic-sky-abstract-esoteric-ornament-illustration-free-vector.jpg');
+            background-size: cover;
+            background-attachment: scroll;
             margin: 0;
             padding: 0;
         }
 
-        /* Customize the styles for your visualization containers */
-        .visualization-container {
-            width: 100%;
-            max-width: 1200px;
+                #main-title {
+            
+            
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            margin-top: 20px;
+            padding-left: 2cm;
+            padding-right: 2cm;
+            font-size: 24px;
+            border: 4px solid #000;
         }
 
+
+        /* Customize the styles for your visualization containers */
+
+
+        #viz1-container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2cm; /* Add space for A4 page margins */
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for content */
+            border: 4px solid #000; /* 2px wide, solid, black border */
+        }
+
+        #viz2-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2cm; /* Add space for A4 page margins */
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for content */
+            align-items: center;
+            border: 4px solid #000;
+        }
+
+        #maintextcontainer {
+            border: 2px solid #000; /* 2px wide, solid, black border */
+            display: flex;
+            flex-direction: column;
+            padding-left: 2cm;
+            padding-right: 2cm;
+            padding-top: 1cm;
+            padding-bottom: 1cm;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for content */
+        
+        }
+
+        #main2textcontainer {
+            border: 2px solid #000; /* 2px wide, solid, black border */
+            display: flex;
+            flex-direction: column;
+            padding-left: 2cm;
+            padding-right: 2cm  ;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for content */
+            border-left: 4px solid #000;
+            border-right: 4px solid #000;
+        }
+
+        #left-content {
+            flex: 2; /* Occupy 1/3 of the available space */
+            
+        }
+
+        #right-content {
+            flex: 3; /* Occupy 2/3 of the available space */
+        }
+
+        #half {
+            flex: 1;
+        }
+
+        #half2 {
+            flex: 1;
+        }
         /* Customize other styles as needed */
+
+        p1 {
+            font-size: 16px; /* Font size for paragraphs */
+            line-height: 1.5; /* Line spacing for readability */
+            margin: 0 0 20px; /* Margin for spacing between paragraphs */
+        }
+
+        p {
+            font-size: 10px; /* Font size for paragraphs */
+            line-height: 1.5; /* Line spacing for readability */
+            margin: 0 0 20px; /* Margin for spacing between paragraphs */
+        }
+
+        p3 {
+            
+            font-size: 14px; /* Font size for paragraphs */
+            line-height: 1.5; /* Line spacing for readability */
+            margin: 0 0 20px; /* Margin for spacing between paragraphs */
+        }
+
+        .column-1 {
+  flex: 2; /* Takes up 1/4 of the available space */
+  
+  
+}
+
+.column-2 {
+  flex: 1; 
+    padding-left: 10px ;
+    padding-right: 10px;
+    
+}
+
+
+
+h2 {        font-family: 'Times New Roman', Times, serif;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            
+            font-size: 24px;}
+
+#bold {
+    font-weight: bold;
+  }
+
 
     </style>
 </head>
 <body>
-    <div class="visualization-container">
-        <!-- Add your first data visualization here -->
-        <h2>World Density Plot - Temperature and Humidity</h2>
-        <div id="temperature-humidity-plot"></div>
+
+    <div id="main-title">
+        <h1>Observing the Skies: Weather Edition</h1>
     </div>
 
-    <div class="visualization-container">
-        <!-- Add your second data visualization here -->
-        <h2>Scatter Plot - Air Quality, Weather Conditions, and Humidity</h2>
-        <div id="scatter-plot"></div>
+    <div id="maintextcontainer"> 
+         <p1>This visualization analyses weather data in the month of September around capital cities of the world to understand how weather conditions influence our ability to marvel at the celestial wonders of our world, from the tranquil beauty of sunrises and sunsets to the mystique of moonrises and stargazing.
+            Weather plays a pivotal role in our celestial adventures, shaping the quality and experience of our skywatching. Clear skies, with their crisp clarity and vibrant hues, can turn a routine sunrise or sunset into a breathtaking work of art. In contrast, cloudy or stormy conditions can obscure these events, leaving us yearning for a clearer day.
+         </p1>
+         <p1>The following visualizations empower telescope and astronomy enthusiasts to make informed decisions when planning their celestial observations. They can strategically choose locations and times, ensuring that the skies are in their favor for capturing the wonders of the universe. This enhanced knowledge and data-driven approach enhance the overall stargazing and astronomy experience, making it more rewarding and fulfilling.</p1>
+         
     </div>
+
+    <div id="viz1-container">
+        <div id="left-content">
+            <!-- Left-side content goes here -->
+            <h2>Info:</h2>
+           
+            <p3>The world map displays the temperature-humidity and the moon observing times.  </p3> 
+                <br>
+            <p3><span id="bold">Humidity:</span>  In most cases, lower humidity is associated with clearer skies. High humidity can lead to the formation of clouds, fog, and haze, which can obstruct your view of the sky. So, a drier climate is generally more conducive to clear skies.</p3>
+                <br>
+            <p3><br><span id="bold">Temperature:</span>  The effect of temperature on clear skies can vary by region and season. In some regions, cooler temperatures can lead to less atmospheric moisture and clearer skies, while in other areas, warm temperatures might promote stable atmospheric conditions. It's important to note that excessively cold temperatures can also lead to fog and frost, which can obstruct visibility.</p>
+            
+        </div>
+        <div id="right-content">
+            
+            <div id="temperature-humidity-plot"></div>
+            <p><span id="bold">INTERACTIVE INFO:</span> Use the humidity slider to locate regions with less humidity and cooler temperatures. Hover over to use TOOLTIP for information on Moon rise and Moon set timings </p>
+        </div>
+    </div>
+
+
+
+    <div id="viz1-container">
+
+    <div  id="column-1">
+        <h2>Moon Phase</h2>
+        <p3>
+            Moon phase refers to the shape or appearance of the moon as seen from Earth at a particular time. The moon's phases result from its position in relation to the Earth and the Sun. The moon goes through a regular cycle of phases, which includes the following:
+            <br>
+            <span id="bold">New Moon:</span> This is when the moon is not visible in the night sky. It occurs when the moon is positioned between the Earth and the Sun.
+            <br>
+            <span id="bold">Waxing Crescent:</span> The moon appears as a small, crescent-shaped sliver in the western evening sky after sunset.
+            <br>
+            <span id="bold">First Quarter (Half Moon):</span> The moon is half-illuminated and appears as a half-circle in the sky, similar to the letter "D."
+            <br>
+            <span id="bold">Waxing Gibbous:</span> The moon is more than half illuminated but not yet full.
+            <br>
+            <span id="bold">Full Moon:</span> The moon appears as a complete, fully illuminated circle in the night sky.
+            <br>
+            <span id="bold">Waning Gibbous:</span> The moon is more than half illuminated but not quite full, and it's in the eastern morning sky.
+            <br>
+            <span id="bold">Third Quarter (Half Moon):</span> The moon is again half-illuminated but appears as a half-circle in the sky, similar to the letter "C."
+            <br>
+            <span id="bold">Waning Crescent:</span> The moon appears as a small, crescent-shaped sliver in the eastern morning sky before sunrise.</p3>
+            <br>
+            <h2>Moon Illumination</h2>
+            <p3> Moon illumination is a critical factor for moon observers, photographers, and astronomers. A higher percentage of moon illumination often means a brighter moon, which can affect the visibility of celestial objects like stars and planets. Stargazers sometimes prefer lower moon illumination, which is associated with crescent moon phases, as it results in darker skies and better visibility of other celestial objects.</p3> 
+    </div>
+
+    <div id ="column-2">
+
+        <div id="Piechart"></div>
+        <p><span id="bold">INTERACTIVE INFO:</span> Hover for tooltip</p>
+        <img src="https://t3.ftcdn.net/jpg/02/76/68/88/240_F_276688838_SYslNZIrUgz6IUezWdSYIs0n7ssPZQws.jpg" >
+    </div>
+
+    </div>
+
+
+    <div id="main2textcontainer">
+        <h2>Pollution Levels</h2>
+        <p1>
+            Pollution can significantly impact sky visibility, and by knowing where the air is cleaner, you can plan your stargazing and skywatching escapades more effectively.
+            Here we calculate Average pollution levels taking in consideration of different air quality indicators such as: <span id="bold">Carbon_Monoxide, Nitrogen_dioxide, Sulphur_dioxide, PM2.5, PM10.</span> 
+
+        </p1>
+    </div>
+
+
+    <div id="viz1-container">
+        <div id="half">
+        <h2>Suitable</h2>
+        <div id="barchart1"></div>
+        <p><span id="bold">INTERACTIVE INFO:</span> Hover for tooltip</p>
+        </div>
+
+    <div id="half2">
+
+        <h2>Not suitable</h2>
+        <div id="barchart2"></div>
+        <p><span id="bold">INTERACTIVE INFO:</span> Hover for tooltip</p>
+    </div>
+</div>
+
+<div id="main2textcontainer">
+    <h2>Humidity plays an important role</h2>
+    <p3>The relationship between PM10 and Humidity clearly shows that lower levels of PM10 and moderate humidity are the best for observing clear skies.</p3>
+    <p3>Air_qualityPM10, which is a measure of particulate matter in the air. It refers to particles with a diameter of 10 micrometers or smaller. These tiny particles come from various sources, both natural and human-made, and they have different chemical compositions. PM10 includes dust, pollen, soot, smoke, and other small airborne particles. <br> </p3>
+</div>
+
+    <div id="viz2-container">
+
+        <div id="humid1"></div>
+        <p><span id="bold">INTERACTIVE INFO:</span> Zoom with drag and hover for tooltip</p>
+
+    </div>
+
+
+    <div id="main2textcontainer"> 
+        <h2>High Humidity = High Precipitation</h2>
+        <p3>High humidity leads to more precipitation because it means there's a significant amount of moisture in the air. When the air becomes saturated with moisture and can no longer hold additional water vapor, this excess moisture condenses and forms clouds. Eventually, these clouds release precipitation in the form of rain, snow, or other forms of moisture, depending on temperature and local conditions. High humidity is a crucial factor in the creation of clouds and the occurrence of precipitation in the atmosphere.</p3>
+    </div>
+
+    <div id="viz2-container">
+   
+    
+        <div id="humid2"></div>
+        <p><span id="bold">INTERACTIVE INFO: Hover for tooltip</span></p>
+
+    </div>
+
+
+
+
+
 
     <!-- Include Vega-Lite scripts for data visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
 
     <!-- Include your JSON data files hosted on GitHub -->
     <script>
         // GitHub raw file URLs for your JSON files
-        const temperatureHumidityJSON = 'https://raw.githubusercontent.com/irhen-chan/homework10/main/mapvisualization.vl.json';
-        const scatterPlotJSON = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/scatterplotvisualization.vl.json';
+        const temperatureHumidityJSON = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/mapppvisualization.vl.json';
+        const piechartvisualizationJSON = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/piechartvisualization.vl.json';
+        const cleanJSON = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/clean_visualization.vl.json';
+        const topJSON = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/top_visualization.vl.json';
+        const humid_air = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/scatterplotvisualization.vl.json';
+        const humid_prec = 'https://raw.githubusercontent.com/irhen-chan/dataviz2/main/humid_prec_visualization.vl.json';
 
         // Embed the first visualization from your first JSON file
-        vegaEmbed('#temperature-humidity-plot', temperatureHumidityJSON)
+        vegaEmbed('#temperature-humidity-plot', temperatureHumidityJSON, {"actions": false})
             .then(result => console.log(result))
             .catch(error => console.error('Error loading temperature-humidity plot:', error));
 
         // Embed the second visualization from your second JSON file
-        vegaEmbed('#scatter-plot', scatterPlotJSON)
+        vegaEmbed('#Piechart', piechartvisualizationJSON, {"actions": false})
             .then(result => console.log(result))
             .catch(error => console.error('Error loading scatter plot:', error));
+
+        // Embed the third visualization from your second JSON file
+        vegaEmbed('#barchart1', cleanJSON, {"actions": false})
+            .then(result => console.log(result))
+            .catch(error => console.error('Error loading scatter plot:', error));
+
+        // Embed the fourth visualization from your second JSON file
+        vegaEmbed('#barchart2', topJSON, {"actions": false})
+            .then(result => console.log(result))
+            .catch(error => console.error('Error loading scatter plot:', error));
+
+        // Embed the fifth visualization from your second JSON file
+        vegaEmbed('#humid1', humid_air, {"actions": false})
+            .then(result => console.log(result))
+            .catch(error => console.error('Error loading scatter plot:', error));
+
+        // Embed the 6th visualization from your second JSON file
+        vegaEmbed('#humid2', humid_prec, {"actions": false})
+            .then(result => console.log(result))
+            .catch(error => console.error('Error loading scatter plot:', error));
+
     </script>
 </body>
 </html>
